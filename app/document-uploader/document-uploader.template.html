@@ -1,0 +1,31 @@
+
+Document Uploader Component:
+
+<div class="attach_box">
+  <table class="attach_table">
+      <tr>
+          <th ng-repeat="col in $ctrl.columns">{{col.value}}</th>
+      </tr>
+      <tr ng-repeat="docObj in $ctrl.documentTypes">
+        <td ng-repeat="col in $ctrl.columns">
+          <span ng-If="col.key != 'files' || col.key != 'upload'">{{docObj[col.key]}}</span>
+          <span ng-If="col.key == 'files'">
+              <button class="add_dono add_doc"> 
+                  <span>Attch Document</span>
+                  <div dx-file-uploader="fileUploaderOptions"></div>
+              </button>
+          </span>
+          <span ng-If="col.key == 'upload'">
+              <img src="../img/upload.png" />
+          </span>
+        </td>
+          <!-- <td>
+              <button class="add_dono add_doc"> 
+                  <span>Attch Document</span>
+                  <div dx-file-uploader="fileUploaderOptions"></div>
+              </button>
+          </td>
+          <td><img src="../img/upload.png" /></td> -->
+      </tr>
+  </table>
+</div>
