@@ -1,6 +1,3 @@
-
-Document Uploader Component:
-
 <div class="attach_box">
   <table class="attach_table">
       <tr>
@@ -12,20 +9,14 @@ Document Uploader Component:
           <span ng-If="col.key == 'files'">
               <button class="add_dono add_doc"> 
                   <span>Attch Document</span>
-                  <div dx-file-uploader="fileUploaderOptions"></div>
+                  <!-- <div dx-file-uploader="fileUploaderOptions"></div> -->
+                  <input type="file" name="files[]" multiple />
               </button>
           </span>
           <span ng-If="col.key == 'upload'">
               <img src="../images/upload.png" />
           </span>
         </td>
-          <!-- <td>
-              <button class="add_dono add_doc"> 
-                  <span>Attch Document</span>
-                  <div dx-file-uploader="fileUploaderOptions"></div>
-              </button>
-          </td>
-          <td><img src="../img/upload.png" /></td> -->
       </tr>
   </table>
 </div>

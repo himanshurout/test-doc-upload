@@ -5,7 +5,13 @@
     </label>
     <section id="serology_toggle">
         <p class="info_p">Please attach required Serology Report</p>
-        <document-uploader></document-uploader>
+        <div ng-if="$ctrl.serologyDoc">
+            <document-uploader
+                columns="$ctrl.serologyDoc.columns"
+                document-types="$ctrl.serologyDoc.documentTypes" 
+            >
+            </document-uploader>
+        </div>
     </section>
     <input id="initial_document1" type="checkbox" name="toggle" class="question" checked="checked" />
     <label for="initial_document1">
@@ -29,27 +35,12 @@
                         <div class="inner_container">
                             <p class="info_p">Upload Consolidated Donor Chart in single upload action. This
                                 might increase the overall timeline for closing the case.</p>
-                            <div class="attach_box">
-                                <table class="attach_table">
-                                    <tr>
-                                        <th>Document Type</th>
-                                        <th>Document Attached</th>
-                                        <th>Attach Document</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Serology Report</td>
-                                        <td>
-                                            <button class="add_dono add_doc">
-                                                <span>Attch Document</span>
-                                                <input type="file" id="file2" data-common="file2"
-                                                    name="files[]" multiple />
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <img src="images/upload.png" />
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div ng-if="$ctrl.consolidatedDoc">
+                                <document-uploader
+                                    columns="$ctrl.consolidatedDoc.columns"
+                                    document-types="$ctrl.consolidatedDoc.documentTypes" 
+                                >
+                                </document-uploader>
                             </div>
                         </div>
                     </div>
@@ -198,36 +189,13 @@
             <h4>
                 <img src="images/help_i.png" /> DRAI
             </h4>
-            <table class="attach_table">
-                <tr>
-                    <th>Document Type</th>
-                    <th>Document Attached</th>
-                    <th>Initiated Date</th>
-                    <th>Lapsed Days</th>
-                    <th>Attach Document</th>
-                </tr>
-                <tr>
-                    <td>Serology Report</td>
-                    <td>
-                        <button class="add_dono add_doc">
-                            <span>Attch Document</span>
-                            <input type="file" id="file1" data-common="file1" name="files[]" multiple />
-                        </button>
-                    </td>
-                    <td>07/01/19</td>
-                    <td>21</td>
-                    <td><img src="images/upload.png" /></td>
-                </tr>
-                <td colspan="5">
-                    <div class="add_cmt">
-                        <p><label>Comment from Document Specialist :</label>DRAI documents are missing,
-                            kindly upload.</p>
-                        <span class="rpl_cmt">Reply</span><span class="all_comments">View All
-                            Comments</span>
-                        <textarea class="cmt_textarea"></textarea>
-                    </div>
-                </td>
-            </table>
+            <div ng-if="$ctrl.additionalDoc">
+                <document-uploader
+                    columns="$ctrl.additionalDoc.columns"
+                    document-types="$ctrl.additionalDoc.documentTypes" 
+                >
+                </document-uploader>
+            </div>
         </div>
     </section>
 </div>
