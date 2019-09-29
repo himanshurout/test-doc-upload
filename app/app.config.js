@@ -1,19 +1,13 @@
 'use strict';
 
 angular.
-  module('phonecatApp').
+  module('allerganApp').
   config(['$routeProvider',
     function config($routeProvider) {
       $routeProvider.
-        when('/phones', {
-          template: '<phone-list></phone-list>'
-        }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
-        }).
         when('/documents', {
           template: '<document-container></document-container>'
         }).
-        otherwise('/phones');
+        otherwise('/documents');
     }
   ]);

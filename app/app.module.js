@@ -1,12 +1,9 @@
 'use strict';
 
-// Define the `phonecatApp` module
-angular.module('phonecatApp', [
+// Define the `allerganApp` module
+angular.module('allerganApp', [
   'ngAnimate',
   'ngRoute',
-  'core',
-  'phoneDetail',
-  'phoneList',
   'documentContainer',
   'documentUploader'
 ]);
