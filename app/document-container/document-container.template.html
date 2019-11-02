@@ -6,6 +6,7 @@
     <section id="serology_toggle">
         <p class="info_p">Please attach required Serology Report</p>
         <div ng-if="$ctrl.serologyDoc">
+            <button ng-click="$ctrl.getData()"> show data</button>
             <document-uploader
                 columns="$ctrl.serologyDoc.columns"
                 document-types="$ctrl.serologyDoc.documentTypes" 

@@ -17,6 +17,11 @@
               <img src="../images/upload.png" />
           </span>
         </td>
+        <td>
+          <input ng-model="docObj.comments" ng-if="docObj.showCmments" />
+          <a href="" ng-click="docObj.showCmments=!docObj.showCmments">Reply</a>
+          <a href="" ng-click="$ctrl.viewAllComments(docObj);">View All</a>
+        </td>
       </tr>
   </table>
 </div>

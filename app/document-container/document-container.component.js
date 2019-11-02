@@ -20,7 +20,12 @@ function documentContainerController() {
     ],
     documentTypes : [
       {
-        "docType": "Serology Report"
+        "docType": "Serology Report",
+        "categoryId": "123"
+      },
+      {
+        "docType": "2nd Serology Report",
+        "categoryId": "456"
       }
     ]
   };
@@ -78,6 +83,12 @@ function documentContainerController() {
       }
     ]
   };
+
+  ctrl.getData = function() {
+    console.log(ctrl.serologyDoc.documentTypes);
+  }
+
+  
 
 
 }

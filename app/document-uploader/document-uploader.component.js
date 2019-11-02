@@ -2,6 +2,9 @@
 
 function documentUploaderController() {
   var ctrl = this;
+  ctrl.viewAllComments = function(docObj) {
+    console.log(docObj);
+  }
 }
 
 angular.
@@ -11,6 +14,6 @@ angular.
     controller: documentUploaderController,
     bindings: {
       columns: '<',
-      documentTypes: '<'
+      documentTypes: '='
     }
   });
